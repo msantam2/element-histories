@@ -1,13 +1,40 @@
-let elementInfo = require('./element-info.js');
+'use strict';
+let allElements = require('./element-info.js');
 
 module.exports = {
-  image: elementName => {
-    return elementInfo[elementName.toLowerCase()]['image'];
+  image: function(elementName) {
+    if (typeof elementName === 'string' && elementName.toLowerCase() in allElements) {
+      return allElements[elementName.toLowerCase()]['image'];
+    } else {
+      throw new Error('element name invalid');
+    }
   },
-  country: elementName => {
-    return elementInfo[elementName.toLowerCase()]['country'];
+
+  country: function(elementName) {
+    if (typeof elementName === 'string' && elementName.toLowerCase() in allElements) {
+      return allElements[elementName.toLowerCase()]['country'];
+    } else {
+      throw new Error('element name invalid');
+    }
   },
-  story: elementName => {
-    return elementInfo[elementName.toLowerCase()]['story'];
+
+  story: function(elementName) {
+    if (typeof elementName === 'string' && elementName.toLowerCase() in allElements) {
+      return allElements[elementName.toLowerCase()]['story'];
+    } else {
+      throw new Error('element name invalid');
+    }
+  },
+
+  fullInfo: function(elementName) {
+    if (typeof elementName === 'string' && elementName.toLowerCase() in allElements) {
+      return allElements[elementName.toLowerCase()];
+    } else {
+      throw new Error('element name invalid');
+    }
+  },
+
+  allNames: function() {
+    return Object.keys(allElements);
   }
 }
