@@ -1,53 +1,32 @@
 const expect = require('chai').expect;
 const elementHistories = require('../index.js');
-const year = elementHistories.year;
-const location = elementHistories.location;
+const image = elementHistories.image;
+const country = elementHistories.country;
 const story = elementHistories.story;
 
 describe('elementHistories', function() {
-  describe('#year', function() {
-    it('returns a string', function() {
-      let discoveryYear = year('rhenium');
-      expect(discoveryYear).to.be.a('string');
+  describe('#image', function() {
+    it('returns a string', function () {
+      let elementImageLink = image('silver');
+      expect(elementImageLink).to.be.a('string');
     });
 
-    it('returns a valid year if known', function() {
-      let discoveryYear = year('hafnium');
-      expect(parseInt(discoveryYear)).to.not.be.a(NaN);
-    });
-
-    it('returns ancient where appropriate', function() {
-      let discoveryYear = year('gold');
-      expect(discoveryYear).to.equal('ancient');
-    });
-
-    it('is not case sensitive to element name', function() {
-      let discoverYear1 = year('fLuOrInE');
-      let discoverYear2 = year('FLUORINE');
-      expect(discoverYear1).to.equal(discoverYear2);
+    it('returns a URL link', function() {
+      let elementImageLink = image('fermium');
+      expect(elementImageLink).to.match(/^http/);
     });
   });
 
-  describe('#location', function() {
+  describe('#country', function() {
     it('returns an object', function() {
-      let discoverLocation = location('berkelium');
-      expect(discoverLocation).to.be.a('object');
-    });
-    // lat and lng used in Google Maps API
-    it('returns an object with lat property', function() {
-      let discoverLocation = location('xenon');
-      expect(discoverLocation).to.include.keys('lat');
-    });
-
-    it('returns an object with lng property', function() {
-      let discoverLocation = location('xenon');
-      expect(discoverLocation).to.include.keys('lng');
+      let discoverCountry = country('berkelium');
+      expect(discoverCountry).to.be.a('string');
     });
 
     it('is not case sensitive to element name', function() {
-      let discoverLocation1 = location('fLuOrInE');
-      let discoverLocation2 = location('FLUORINE');
-      expect(discoverLocation1).to.equal(discoverLocation2);
+      let discoverCountry1 = country('fLuOrInE');
+      let discoverCountry2 = country('FLUORINE');
+      expect(discoverCountry1).to.equal(discoverCountry2);
     });
   });
 

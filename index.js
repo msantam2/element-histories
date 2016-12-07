@@ -1,6 +1,13 @@
+let elementInfo = require('./element-info.js');
+
 module.exports = {
-  // API functions go here
-  // year: () => {},
-  // location (lat, lng for Google Maps API): () => {},
-  // story: () => {},
+  image: elementName => {
+    return elementInfo[elementName.toLowerCase()]['image'];
+  },
+  country: elementName => {
+    return elementInfo[elementName.toLowerCase()]['country'];
+  },
+  story: elementName => {
+    return elementInfo[elementName.toLowerCase()]['story'];
+  }
 }
