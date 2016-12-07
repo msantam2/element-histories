@@ -2,7 +2,9 @@ Chemical Element Histories
 =========
 
 NPM package that provides some historical info for each chemical element (backstory, country of discovery, and even an image of the element!)
-<img src="http://smart-learning.co.uk/teachers-club/wp-content/uploads/cache/2014/12/elements-hero-image/3281568215.jpg" height="195px" width="620px"/> 
+
+
+<img src="http://smart-learning.co.uk/teachers-club/wp-content/uploads/cache/2014/12/elements-hero-image/3281568215.jpg" height="195px" width="620px"/>
 
 ## Installation
 
