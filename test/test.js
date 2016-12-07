@@ -15,31 +15,37 @@ describe('elementHistories', function() {
       let elementImageLink = image('fermium');
       expect(elementImageLink).to.match(/^http/);
     });
+
+    it('is not case sensitive to element name', function() {
+      let elementImageLink1 = image('fLuOrInE');
+      let elementImageLink2 = image('FLUORINE');
+      expect(elementImageLink1).to.equal(elementImageLink2);
+    });
   });
 
   describe('#country', function() {
-    it('returns an object', function() {
-      let discoverCountry = country('berkelium');
-      expect(discoverCountry).to.be.a('string');
+    it('returns a string', function() {
+      let discoveryCountry = country('berkelium');
+      expect(discoveryCountry).to.be.a('string');
     });
 
     it('is not case sensitive to element name', function() {
-      let discoverCountry1 = country('fLuOrInE');
-      let discoverCountry2 = country('FLUORINE');
-      expect(discoverCountry1).to.equal(discoverCountry2);
+      let discoveryCountry1 = country('fLuOrInE');
+      let discoveryCountry2 = country('FLUORINE');
+      expect(discoveryCountry1).to.equal(discoveryCountry2);
     });
   });
 
   describe('#story', function() {
     it('returns a string with a brief story behind each element', function() {
-      let discoverStory = story('polonium');
-      expect(discoverStory).to.be.a('string');
+      let discoveryStory = story('polonium');
+      expect(discoveryStory).to.be.a('string');
     });
 
     it('is not case sensitive to element name', function() {
-      let discoverStory1 = story('fLuOrInE');
-      let discoverStory2 = story('FLUORINE');
-      expect(discoverStory1).to.equal(discoverStory2);
+      let discoveryStory1 = story('fLuOrInE');
+      let discoveryStory2 = story('FLUORINE');
+      expect(discoveryStory1).to.equal(discoveryStory2);
     });
   });
 });
