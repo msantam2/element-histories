@@ -10,6 +10,19 @@
     "type": "git",
     "url": "git+https://github.com/msantam2/element-histories.git"
   },
+  "keywords": [
+    "chemistry",
+    "chemical",
+    "element",
+    "elements",
+    "history",
+    "histories",
+    "story",
+    "image",
+    "country",
+    "periodic",
+    "periodic table"
+  ],
   "author": "Matt Santamaria <msantam2@gmail.com>",
   "license": "MIT",
   "bugs": {
